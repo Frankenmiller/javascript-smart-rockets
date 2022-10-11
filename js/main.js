@@ -1,15 +1,31 @@
 var population;
-this.lifespan = 200;
+var lifespan = 200;
+var life_P;
+var count = 0;
+var target;
 
 function setup() {
     createCanvas(350, 500);
     rocket = new Rocket();
     population = new Population();
+    life_P = createP();
+    target = createVector(width/2, 50);
 }
 
 function draw() {
     background(0);
     population.run();
+    life_P.html(count);
+    count++;
+    
+    fill(255, 255, 255);
+    ellipse(target.x, target.y, 16, 16);
+    fill(255, 0, 0);
+    ellipse(target.x, target.y, 12, 12);
+    fill(255, 255, 255);
+    ellipse(target.x, target.y, 8, 8);
+    fill(255, 0, 0);
+    ellipse(target.x, target.y, 4, 4);
 }
 
 function Population() {
@@ -32,6 +48,7 @@ function DNA() {
     this.genes = [];
     for (var i=0; i<lifespan; i++) {
         this.genes[i] = p5.Vector.random2D();
+        this.genes[i].setMag(0.1);
     }
 }
 
@@ -40,15 +57,13 @@ function Rocket() {
     this.vel = createVector();
     this.acc = createVector();
     this.dna = new DNA();
-    this.count = 0;
 
     this.applyForce = function(force) {
         this.acc.add(force);
     }
 
     this.update = function() {
-        this.applyForce(this.dna.genes[this.count]);
-        this.count++;
+        this.applyForce(this.dna.genes[count]);
 
         this.vel.add(this.acc);
         this.pos.add(this.vel);
