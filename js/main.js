@@ -38,7 +38,7 @@ function draw() {
     // strokeText(count, 10, 10);
     count++;
   
-  if  (count == lifespan) {
+    if (count == lifespan) {
         population.evaluate();
         population.selection();
         // population = new Population();
@@ -157,7 +157,7 @@ function DNA(genes) {
 
 
 function Rocket(dna) {    
-  this.pos = createVector(width / 4, height -60);
+  this.pos = createVector(3 * (width/4), height -60);
   this.vel =  createVector(0);
   this.acc = createVector();
   this.struck_target = false;
@@ -223,20 +223,39 @@ function Rocket(dna) {
   }
   
   this.show = function() {
-    push();
-    translate(this.pos.x, this.pos.y);
-    rotate(this.vel.heading());
-    rectMode(CENTER);
-    fill(255, 255, 255, 150);
-    rect(0, 0, 40, 5);
-    fill(255, 0, 0, 150);
-    rect(4, 0, 2.5, 5);
-    rect(9, 0, 2.5, 5);
-    rect(14, 0, 2.5, 5);
-    fill(255, 95, 31, 150);
-    rect(-18, 0, 5, 8);
-    fill(255, 255, 0, 150);
-    rect(-18, 0, 5, 3);
-    pop();
-  }
+        if (!this.crashed) {
+            push();
+            translate(this.pos.x, this.pos.y);
+            rotate(this.vel.heading());
+            rectMode(CENTER);
+            fill(255, 255, 255, 150);
+            rect(0, 0, 40, 5);
+            fill(255, 0, 0, 150);
+            rect(4, 0, 2.5, 5);
+            rect(9, 0, 2.5, 5);
+            rect(14, 0, 2.5, 5);
+            fill(255, 95, 31, 150);
+            rect(-18, 0, 5, 8);
+            fill(255, 255, 0, 150);
+            rect(-18, 0, 5, 3);
+            pop();
+        }
+        if (this.crashed) {
+            push();
+            translate(this.pos.x, this.pos.y);
+            rotate(this.vel.heading());
+            rectMode(CENTER);
+            fill(255, 255, 0);
+            ellipse(0, 0, 25, 25)
+            // Star(0, 0, 25, 25)
+            fill(255, 95, 31);
+            ellipse(0, 0, 18, 18)
+            fill(255, 0, 0);
+            ellipse(0, 0, 10, 10)
+            fill(0 , 0, 0);
+            ellipse(0, 0, 3, 3)
+            pop();
+        }
+        }
 }
+
