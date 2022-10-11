@@ -4,7 +4,7 @@ html {
   line-height: 1.4;
   width: 400px;
   margin-left: 50%;
-  padding-top: 100px;
+  padding-top: 70px;
   padding-bottom: 500px;
   transform: translate(-50%);
 }
@@ -20,7 +20,7 @@ body {
 
 p {
   position: absolute;
-  top: 75px;
+  top: 45px;
   left: 50%;
   transform: translate(-50%);
   white-space: nowrap;
