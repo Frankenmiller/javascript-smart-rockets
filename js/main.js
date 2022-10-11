@@ -1,10 +1,9 @@
 function setup() {
-    createCanvas(windowWidth, windowHeight);
+    createCanvas(400, 300);
 }
 
 function draw() {
-    background(255);
-    text("put your p5.js code here",10, frameCount % height);
+    background(0);
 }
 
 function windowResized() {
