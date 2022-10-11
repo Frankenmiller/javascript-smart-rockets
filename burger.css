@@ -68,7 +68,7 @@
     display: block;
     text-align: center;
     color: black;
-    max-width: 350px;
+    max-width: 300px;
     font-size: 18px;
     margin: 0 auto 16px;
     font-weight: 600;
@@ -79,7 +79,7 @@
 
 #social-icons {
     position: relative;
-    margin-left: 35%;
+    margin-left: 28%;
     transform: translateX(-50%);
     align-items: center;
     display: flex;

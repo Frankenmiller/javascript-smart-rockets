@@ -5,6 +5,7 @@ var life_P;
 var count = 0;
 var target;
 var maxforce = 0.2;
+var generation = 0;
 
 function setup()  {
     document.getElementById('#my_canvas');
@@ -24,19 +25,21 @@ function draw() {
   count++;
   
   if  (count == lifespan) {
-    population.evaluate();
-    population.selection();
-    // population = new Population();
-    count = 0;
-  }
-fill(255, 255, 255);
-ellipse(target.x, target.y, 16, 16);
-fill(255, 0, 0);
-ellipse(target.x, target.y, 12, 12);
-fill(255, 255, 255);
-ellipse(target.x, target.y, 8, 8);
-fill(255, 0, 0);
-ellipse(target.x, target.y, 4, 4);
+        population.evaluate();
+        population.selection();
+        // population = new Population();
+        count = 0;
+        generation += 1;
+    }
+    fill(255, 255, 255);
+    ellipse(target.x, target.y, 16, 16);
+    fill(255, 0, 0);
+    ellipse(target.x, target.y, 12, 12);
+    fill(255, 255, 255);
+    ellipse(target.x, target.y, 8, 8);
+    fill(255, 0, 0);
+    ellipse(target.x, target.y, 4, 4);
+    life_P.html(generation);
 }
 
 function Population() {   
@@ -58,7 +61,8 @@ function Population() {
             maxfit = this.rockets[i].fitness;
           }
       }
-   
+
+
 
       for (var i = 0; i < this.pop_size; i++) {
           this.rockets[i].fitness /= maxfit;
@@ -137,6 +141,7 @@ function Rocket(dna) {
   this.pos = createVector(width/2, height);
   this.vel =  createVector(0);
   this.acc = createVector();
+  this.struck_target = false;
   if (dna) {
     this.dna = dna;
   } else {
@@ -150,19 +155,25 @@ function Rocket(dna) {
   
   this.calcFitness = function() {
     var d = dist(this.pos.x, this.pos.y, target.x, target.y);
-    
     this.fitness = map(d, 0, width, width, 0);
-    
+    if (this.struck_target) {
+        this.fitness *= 10;
+    }
   }
   
   this.update = function() {
-    
     var d = dist(this.pos.x, this.pos.y, target.x, target.y);
+    if (d < 10) {
+        this.struck_target = true;
+    }
     
     this.applyForce(this.dna.genes[count]);
-      this.vel.add(this.acc);
-      this.pos.add(this.vel);
-      this.acc.mult(0);
+    if (!this.struck_target) {
+        this.vel.add(this.acc);
+        this.pos.add(this.vel);
+        this.acc.mult(0);
+
+    }
   }
   
   this.show = function() {
