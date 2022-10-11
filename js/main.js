@@ -1,21 +1,23 @@
 var population;
 var rockets;
-var lifespan = 400;
+var lifespan = 250;
 var life_P;
 var count = 0;
 var target;
 var maxforce = 0.2;
 var generation = 0;
 
-var rx_one = 175;
+var rx_one = 200;
 var ry_one = 375;
-var rx_two = 175;
+var rx_two = 200;
 var ry_two = 75;
-var rx_three = 175;
-var ry_three = 375;
-var rx_four = 175;
-var ry_four = 375;
-var rw = 175;
+var rx_three = 200;
+var ry_three = 225;
+var rx_four = 0;
+var ry_four = 300;
+var rx_five = 0;
+var ry_five = 150;
+var rw = 150;
 var rh = 10;
 
 
@@ -24,7 +26,7 @@ function setup()  {
     rocket = new Rocket();
     population = new Population();
     life_P = createP();
-    target = createVector(width -45, 40);
+    target = createVector(width / 4, 40);
     fill(0, 0, 0);
     rect(0, 0, 10, 10);
 }
@@ -44,11 +46,11 @@ function draw() {
         generation += 1;
     }
     fill(255, 255, 255);
-    rect(rx_two, ry_two, rw, rh)
-    // rect(0, 150, rw, rh)
-    // rect(175, 225, rw, rh)
-    //rect(rx, ry, rw, rh)
     rect(rx_one, ry_one, rw, rh)
+    rect(rx_two, ry_two, rw, rh)
+    rect(rx_three, ry_three, rw, rh)
+    rect(rx_four, ry_four, rw, rh)
+    rect(rx_five, ry_five, rw, rh)
     ellipse(target.x, target.y, 16, 16);
     fill(255, 0, 0);
     ellipse(target.x, target.y, 12, 12);
@@ -155,7 +157,7 @@ function DNA(genes) {
 
 
 function Rocket(dna) {    
-  this.pos = createVector(width / 2, height -25);
+  this.pos = createVector(width / 4, height -60);
   this.vel =  createVector(0);
   this.acc = createVector();
   this.struck_target = false;
@@ -178,7 +180,7 @@ function Rocket(dna) {
         this.fitness *= 10;
     }
     if (this.crashed) {
-        this.fitness = 1;
+        this.fitness *= .5;
     }
   }
   
@@ -193,6 +195,15 @@ function Rocket(dna) {
         this.crashed = true;
     }
     if (this.pos.x > rx_two && this.pos.x < rx_two + rw && this.pos.y > ry_two && this.pos.y < ry_two + rh) {
+        this.crashed = true;
+    }
+    if (this.pos.x > rx_three && this.pos.x < rx_three + rw && this.pos.y > ry_three && this.pos.y < ry_three + rh) {
+        this.crashed = true;
+    }
+    if (this.pos.x > rx_four && this.pos.x < rx_four + rw && this.pos.y > ry_four && this.pos.y < ry_four + rh) {
+        this.crashed = true;
+    }
+    if (this.pos.x > rx_five && this.pos.x < rx_five + rw && this.pos.y > ry_five && this.pos.y < ry_five + rh) {
         this.crashed = true;
     }
     if (this.pos.x > width || this.pos.x < 0) {
