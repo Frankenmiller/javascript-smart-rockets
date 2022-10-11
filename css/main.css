@@ -3,15 +3,14 @@ html {
   font-size: 1em;
   line-height: 1.4;
   width: 362.5px;
-  margin-left: 50%;
-  padding-top: 70px;
+  padding-top: 0px;
   padding-bottom: 500px;
   transform: translate(-50%);
+  margin-left: 50%;
 }
 
 body {
   background: linear-gradient(to bottom, #BDC3C7, #2C3E50);
-  
 }
 
 #my_canvas {
@@ -31,9 +30,13 @@ p {
 }
 
 #opener {
-  top: 25px;
+  top: -10px;
 }
 #counter{
-  top: 607px;
+  top: 538px;
   left: 210px;
+}
+
+.hamburger {
+  right: 15px;
 }

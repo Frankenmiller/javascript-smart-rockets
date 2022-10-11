@@ -7,11 +7,14 @@ var target;
 var maxforce = 0.2;
 
 function setup()  {
-  createCanvas(350, 500);
-  rocket = new Rocket();
-  population = new Population();
-  life_P = createP();
-  target = createVector(width/2, 50);
+    document.getElementById('#my_canvas');
+    createCanvas(350, 500);
+    rocket = new Rocket();
+    population = new Population();
+    life_P = createP();
+    target = createVector(width/2, 50);
+    fill(0, 0, 0);
+    rect(0, 0, 10, 10);
 }
 
 function draw() {

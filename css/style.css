@@ -1,0 +1,41 @@
+* {
+
+}
+
+body {
+    margin: 0;
+    display: flex;
+    margin-top: 45px;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom, #BDC3C7, #2C3E50);
+    padding-bottom: 200px;    
+}
+
+p {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    white-space: nowrap;
+    font-family: sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+    color: darkblue;
+}
+
+#opener {
+    top: -5px;
+}
+#counter{
+    top: 272px;
+    left: 53.5%;
+}
+
+.hamburger {
+    position: absolute;
+    right: 5px;
+    align-items: center;
+    background-color: blue;
+    top: 5px;
+}
