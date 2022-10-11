@@ -9,7 +9,7 @@ function setup() {
     rocket = new Rocket();
     population = new Population();
     life_P = createP();
-    target = createVector(width/2, 50);
+    target = createVector(width/2, 25);
 }
 
 function draw() {
@@ -17,6 +17,11 @@ function draw() {
     population.run();
     life_P.html(count);
     count++;
+    if (count == lifespan) {
+        population = new Population();
+        count = 0;
+
+    }
     
     fill(255, 255, 255);
     ellipse(target.x, target.y, 16, 16);
