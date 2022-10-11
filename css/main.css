@@ -1,6 +1,5 @@
 html {
   color: #222;
-  font-size: 1em;
   line-height: 1.4;
   width: 362.5px;
   padding-top: 0px;
@@ -24,19 +23,15 @@ p {
   white-space: nowrap;
   font-family: sans-serif;
   font-weight: 600;
-  font-size: 16px;
   text-align: center;
   color: darkblue;
 }
 
 #opener {
   top: -10px;
+  font-size: 50px;
 }
 #counter{
   top: 538px;
   left: 210px;
-}
-
-.hamburger {
-  right: 15px;
 }
