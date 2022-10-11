@@ -4,10 +4,10 @@
 
 .hamburger {
     top: 2px;
-    right: 12px;
+    right: 5px;
     position: absolute;
     display: block;
-    width: 35px;
+    width: 45px;
     cursor: pointer;
     appearance: none;
     background: none;
@@ -48,7 +48,7 @@
     width: 100%;
     min-height: 100vh;
     z-index: 5;
-    background: linear-gradient(to bottom, #9F000F, #FFBF00, #228B22);
+    background: linear-gradient(to bottom, #262626, #191970);
     padding-top: 120px;
     transition: 0.4s;
     font-family: sans-serif;
@@ -67,11 +67,12 @@
 .mobile-nav a {
     display: block;
     text-align: center;
-    color: #FFF;
+    color: black;
     max-width: 350px;
     font-size: 18px;
     margin: 0 auto 16px;
-    background-color: #191970;
+    font-weight: 600;
+    background-color: #FFF;
     padding: 12px 16px;
     text-decoration: none;
 }
