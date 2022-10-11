@@ -8,14 +8,56 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="theme-color" content="#212121" />
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="display.css">
+        <link rel="stylesheet" type="text/css" href="burger.css">        
 
     </head>
     <body>
-        <button class="hamburger">Click me!</button>
+        <header class="slide-out">
+            <div class="container">
+                <h2></h2>
+                <nav>
+                    <a href=""></a>
+                    <a href=""></a>
+                    <a href=""></a>
+                </nav>
+                <button class="hamburger">
+                    <div class="bar"></div>
+                </button>
+            </div>
+        </header>
+        <nav class="mobile-nav">
+            <h1 style="font-size: 35px;">frankenmiller's webpages</h1>            
+            <a href="https://frankenmiller.github.io/newapp-bootcamp-certificate/">Bootcamp Certificate</a>
+            <a href="https://frankenmiller.github.io/codecademy-certificate-swiper/">Codecademy Certificates</a>
+            <a href="https://frankenmiller.github.io/jupyter-final-data-project/">Datacamp Project in Jupyter</a>
+            <a href="https://frankenmiller.github.io/javascript-neuralnet-car/">Machine Learning Project</a>
+            <ul id="social-icons">
+                <li><a style="background: none; font-size: 30px;" href="https://wa.me/260954692511">
+                    <ion-icon name="logo-whatsapp"></ion-icon>                
+                </a></li>
+                <li><a style="background: none; font-size: 30px;"  onclick="location.href='mailto:dr.frankenmiller@gmail.com';">
+                    <ion-icon name="mail-outline"></ion-icon>
+                </a></li>
+                <li><a style="background: none; font-size: 30px;" href="https://github.com/frankenmiller">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a></li>
+                <li><a style="background: none; font-size: 30px;" href="https://linkedin.com/in/frankenmiller">
+                    <ion-icon name="logo-linkedin"></ion-icon>                
+                </a></li>
+                <li><a style="background: none; font-size: 30px;" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                    <ion-icon name="logo-youtube"></ion-icon>                
+                </a></li>
+                <li><a style="background: none; font-size: 30px;" href="https://public.tableau.com/app/profile/frankenmiller">
+                    <ion-icon name="logo-tableau"></ion-icon>
+                </a></li>
+            </ul>
+        </nav>
         <p id="opener">frankenmiller's smartrocket project in p5js</p>
         <p id="counter">Life-P:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lifespan: 200</p>
         <script language="javascript" type="text/javascript" src="js/vendor/p5.min.js"></script>
         <script language="javascript" type="text/javascript" src="js/main.js"></script>
+        <script language="javascript" type="text/javascript" src="js/burger.js"></script>
     </body>
     <br>
 </html>

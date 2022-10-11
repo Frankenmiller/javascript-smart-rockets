@@ -31,11 +31,3 @@ p {
     top: 272px;
     left: 53.5%;
 }
-
-.hamburger {
-    position: absolute;
-    right: 5px;
-    align-items: center;
-    background-color: blue;
-    top: 5px;
-}
