@@ -51,13 +51,13 @@ function draw() {
     rect(rx_three, ry_three, rw, rh)
     rect(rx_four, ry_four, rw, rh)
     rect(rx_five, ry_five, rw, rh)
-    ellipse(target.x, target.y, 16, 16);
+    ellipse(target.x, target.y, 24, 24);
     fill(255, 0, 0);
-    ellipse(target.x, target.y, 12, 12);
+    ellipse(target.x, target.y, 18, 18);
     fill(255, 255, 255);
-    ellipse(target.x, target.y, 8, 8);
+    ellipse(target.x, target.y, 12, 12);
     fill(255, 0, 0);
-    ellipse(target.x, target.y, 4, 4);
+    ellipse(target.x, target.y, 6, 6);
     // life_P.html(generation);
 }
 
@@ -228,15 +228,15 @@ function Rocket(dna) {
             translate(this.pos.x, this.pos.y);
             rotate(this.vel.heading());
             rectMode(CENTER);
-            fill(255, 255, 255, 150);
+            fill(255, 255, 255);
             rect(0, 0, 40, 5);
-            fill(255, 0, 0, 150);
+            fill(255, 0, 0);
             rect(4, 0, 2.5, 5);
             rect(9, 0, 2.5, 5);
             rect(14, 0, 2.5, 5);
-            fill(255, 95, 31, 150);
+            fill(255, 95, 31);
             rect(-18, 0, 5, 8);
-            fill(255, 255, 0, 150);
+            fill(255, 255, 0);
             rect(-18, 0, 5, 3);
             pop();
         }
@@ -245,15 +245,21 @@ function Rocket(dna) {
             translate(this.pos.x, this.pos.y);
             rotate(this.vel.heading());
             rectMode(CENTER);
+            fill(255, 0, 0);
+            ellipse(-5, -5, 12, 12)
+            fill(225, 225, 225)
+            ellipse(5, 5, 12, 12)
+            fill(random((255, 95, 31), (255, 255, 0)));
+            ellipse(5, -5, 12, 12)
+            fill(random((255, 95, 31), (255, 255, 0)));
+            ellipse(-5, 5, 12, 12)
             fill(255, 255, 0);
-            ellipse(0, 0, 25, 25)
-            // Star(0, 0, 25, 25)
             fill(255, 95, 31);
             ellipse(0, 0, 18, 18)
             fill(255, 0, 0);
             ellipse(0, 0, 10, 10)
-            fill(0 , 0, 0);
-            ellipse(0, 0, 3, 3)
+            fill(255, 255, 0);
+            ellipse(0, 0, 3, 3);
             pop();
         }
         }
