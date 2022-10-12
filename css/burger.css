@@ -86,7 +86,7 @@
     width: 100%;
     min-height: 100vh;
     z-index: 5;
-    background: linear-gradient(to bottom, #262626, #191970);
+    background: linear-gradient(to bottom, #000, #191970);
     padding-top: 120px;
     transition: 0.4s;
     font-family: sans-serif;
@@ -100,7 +100,7 @@
     width: 100%;
     min-height: 100vh;
     z-index: 5;
-    background: linear-gradient(to bottom, #262626, #191970);
+    background: linear-gradient(to bottom, #000, #191970);
     padding-top: 120px;
     transition: 0.4s;
     font-family: sans-serif;
