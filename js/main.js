@@ -34,8 +34,7 @@ function setup()  {
 function draw() {
     background(0);
     population.run();
-    //life_P.html(count);
-    // strokeText(count, 10, 10);
+    life_P.html(count);
     count++;
   
     if (count == lifespan) {
@@ -51,12 +50,13 @@ function draw() {
     rect(rx_three, ry_three, rw, rh)
     rect(rx_four, ry_four, rw, rh)
     rect(rx_five, ry_five, rw, rh)
+    fill(255, 0, 0);
     ellipse(target.x, target.y, 24, 24);
-    fill(255, 0, 0);
-    ellipse(target.x, target.y, 18, 18);
     fill(255, 255, 255);
-    ellipse(target.x, target.y, 12, 12);
+    ellipse(target.x, target.y, 18, 18);
     fill(255, 0, 0);
+    ellipse(target.x, target.y, 12, 12);
+    fill(255, 255, 255);
     ellipse(target.x, target.y, 6, 6);
     // life_P.html(generation);
 }
@@ -223,45 +223,46 @@ function Rocket(dna) {
   }
   
   this.show = function() {
-        if (!this.crashed) {
-            push();
-            translate(this.pos.x, this.pos.y);
-            rotate(this.vel.heading());
-            rectMode(CENTER);
-            fill(255, 255, 255);
-            rect(0, 0, 40, 5);
-            fill(255, 0, 0);
-            rect(4, 0, 2.5, 5);
-            rect(9, 0, 2.5, 5);
-            rect(14, 0, 2.5, 5);
-            fill(255, 95, 31);
-            rect(-18, 0, 5, 8);
-            fill(255, 255, 0);
-            rect(-18, 0, 5, 3);
-            pop();
-        }
-        if (this.crashed) {
-            push();
-            translate(this.pos.x, this.pos.y);
-            rotate(this.vel.heading());
-            rectMode(CENTER);
-            fill(255, 0, 0);
-            ellipse(-5, -5, 12, 12)
-            fill(225, 225, 225)
-            ellipse(5, 5, 12, 12)
-            fill(random((255, 95, 31), (255, 255, 0)));
-            ellipse(5, -5, 12, 12)
-            fill(random((255, 95, 31), (255, 255, 0)));
-            ellipse(-5, 5, 12, 12)
-            fill(255, 255, 0);
-            fill(255, 95, 31);
-            ellipse(0, 0, 18, 18)
-            fill(255, 0, 0);
-            ellipse(0, 0, 10, 10)
-            fill(255, 255, 0);
-            ellipse(0, 0, 3, 3);
-            pop();
-        }
-        }
+    if (!this.crashed) {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.vel.heading());
+        rectMode(CENTER);
+        fill(255, 255, 255);
+        rect(0, 0, 40, 5);
+        fill(255, 0, 0);
+        rect(4, 0, 2.5, 5);
+        rect(9, 0, 2.5, 5);
+        rect(14, 0, 2.5, 5);
+        fill(255, 95, 31);
+        rect(-18, 0, 5, 8);
+        fill(255, 255, 0);
+        rect(-18, 0, 5, 3);
+        pop();
+    }
+    if (this.crashed) {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.vel.heading());
+        rectMode(CENTER);
+        fill(255, 0, 0);
+        fill(255, 255, 0);
+        ellipse(0, 0, 18, 18)
+        fill(255, 95, 12);
+        ellipse(0, 0, 10, 10)
+        fill(255, 0, 0);
+        ellipse(0, 0, 3, 3);
+        pop();
+    }
+    if (this.struck_target) {
+        push();
+        translate(this.pos.x, this.pos.y);
+        rotate(this.vel.heading());
+        rectMode(CENTER);
+        fill(133, 255, 0);
+        ellipse(0, 0, 30, 30)
+        pop();
+    }
+  }
 }
 
