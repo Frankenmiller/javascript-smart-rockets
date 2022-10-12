@@ -2,7 +2,7 @@
 
 }
 
-.hamburger {
+.hamburger-right {
     top: 2px;
     right: 5px;
     position: absolute;
@@ -16,7 +16,21 @@
     z-index: 7;
 }
 
-.hamburger .bar, .hamburger:after, .hamburger:before {
+.hamburger-left {
+    top: 2px;
+    left: 5px;
+    position: absolute;
+    display: block;
+    width: 45px;
+    cursor: pointer;
+    appearance: none;
+    background: none;
+    outline: none;
+    border: none;
+    z-index: 7;
+}
+
+.hamburger-right .bar, .hamburger-right:after, .hamburger-right:before {
     content: '';
     border-radius: 5px;
     display: block;
@@ -27,15 +41,39 @@
     transition: 0.4s;
 }
 
-.hamburger.is-active:before {
+.hamburger-left .bar, .hamburger-left:after, .hamburger-left:before {
+    content: '';
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0px;
+    transition: 0.4s;
+}
+
+.hamburger-right.is-active:before {
     transform: rotate(-45deg) translate(-7.5px, 6px);
     background-color: blue;
 }
-.hamburger.is-active .bar {
+
+.hamburger-left.is-active:before {
+    transform: rotate(-45deg) translate(-7.5px, 6px);
+    background-color: blue;
+}
+.hamburger-right.is-active .bar {
     opacity: 0;
     background-color: blue;
 }
-.hamburger.is-active:after {
+.hamburger-left.is-active .bar {
+    opacity: 0;
+    background-color: blue;
+}
+.hamburger-right.is-active:after {
+    transform: rotate(45deg) translate(-7.5px, -9px);
+    background-color: blue;
+}
+.hamburger-left.is-active:after {
     transform: rotate(45deg) translate(-7.5px, -9px);
     background-color: blue;
 }
