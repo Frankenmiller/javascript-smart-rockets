@@ -78,7 +78,7 @@
     background-color: blue;
 }
 
-.mobile-nav {
+.mobile-nav-right {
     position: fixed;
     display: block;
     top: 0;
@@ -92,17 +92,54 @@
     font-family: sans-serif;
 }
 
-.mobile-nav h1 {
+.mobile-nav-left {
+    position: fixed;
+    display: block;
+    top: 0;
+    right: 100%;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 5;
+    background: linear-gradient(to bottom, #262626, #191970);
+    padding-top: 120px;
+    transition: 0.4s;
+    font-family: sans-serif;
+}
+
+.mobile-nav-right h1 {
     color: #FFF;
     text-align: center;
     padding-bottom: 25px;
 }
 
-.mobile-nav.is-active {
+.mobile-nav-left h1 {
+    color: #FFF;
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.mobile-nav-right.is-active {
     left: 0;
 }
 
-.mobile-nav a {
+.mobile-nav-left.is-active {
+    right: 0;
+}
+
+.mobile-nav-right a {
+    display: block;
+    text-align: center;
+    color: black;
+    max-width: 300px;
+    font-size: 18px;
+    margin: 0 auto 16px;
+    font-weight: 600;
+    background-color: #FFF;
+    padding: 12px 16px;
+    text-decoration: none;
+}
+
+.mobile-nav-left a {
     display: block;
     text-align: center;
     color: black;
@@ -125,7 +162,15 @@
     list-style-type: none;
 }
 
-.mobile-nav a:hover {
+.mobile-nav-right a:hover {
+    background-color: green;
+    text-decoration: none;
+    font-size: 20px;
+    color: #191970;
+    font-weight: 600;
+}
+
+.mobile-nav-left a:hover {
     background-color: green;
     text-decoration: none;
     font-size: 20px;
@@ -138,11 +183,18 @@
     #social-icons {
         margin-left: 51.5%;
     }
-    .mobile-nav a {
+    .mobile-nav-right a {
         max-width: 400px;
         font-size: 22px;
     }    
-    .mobile-nav a:hover {
+    .mobile-nav-left a {
+        max-width: 400px;
+        font-size: 22px;
+    }    
+    .mobile-nav-right a:hover {
+        font-size: 25px; 
+    }   
+    .mobile-nav-left a:hover {
         font-size: 25px; 
     }   
 }
