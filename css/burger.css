@@ -181,7 +181,7 @@
     /* iPad upright */
 @media only screen and (min-width: 810px) {  
     #social-icons {
-        margin-left: 51.5%;
+        margin-left: 48%;
     }
     .mobile-nav-right a {
         max-width: 400px;
@@ -197,6 +197,14 @@
     .mobile-nav-left a:hover {
         font-size: 25px; 
     }   
+    #troy-lodge {
+        margin-left: 22%;
+        width: 500px;
+    }
+    #about {
+        font-size: 25px;
+        width: 80%;
+    }
 }
     /* iPad sideways */
 @media only screen and (min-width: 1179px) {  
