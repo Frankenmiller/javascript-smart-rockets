@@ -26,7 +26,7 @@ function setup()  {
     rocket = new Rocket();
     population = new Population();
     life_P = createP();
-    target = createVector(width / 4, 40);
+    target = createVector((width/8), 75);
     fill(0, 0, 0);
     rect(0, 0, 10, 10);
 }

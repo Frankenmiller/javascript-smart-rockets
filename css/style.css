@@ -19,6 +19,10 @@ p {
     color: #FFF;
 }
 
+a {
+    color: #262626;
+}
+
 #opener {
     top: -7px;
     font-size: 20px;
@@ -26,4 +30,15 @@ p {
 #counter{
     top: 272px;
     left: 53.5%;
+}
+
+#troy-lodge {
+    margin-left: 12%;
+    display: block;
+    width: 300px;
+}
+#about {
+    text-align: center;
+    width: 70%;
+    white-space: normal;
 }
