@@ -1,10 +1,10 @@
 var population;
 var rockets;
-var lifespan = 250;
+var lifespan = 100;
 var life_P;
 var count = 0;
 var target;
-var maxforce = 0.2;
+var maxforce = .5;
 var generation = 0;
 
 var rx_one = 200;

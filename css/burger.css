@@ -154,13 +154,16 @@
 
 #social-icons {
     position: relative;
-    margin-left: 28%;
-    transform: translateX(-50%);
     align-items: center;
     display: flex;
     flex-direction: row;
     list-style-type: none;
     margin-top: 150px;
+}
+
+.soc-icon-container {
+    margin-left: calc(50% - 225px);
+    display: block;    
 }
 
 .mobile-nav-right a:hover {
@@ -178,10 +181,10 @@
     font-weight: 600;
 }
 
-    /* iPad upright */
+/* iPad upright */
 @media only screen and (min-width: 810px) {  
     #social-icons {
-        margin-left: 48%;
+
     }
     .mobile-nav-right a {
         max-width: 400px;
@@ -198,18 +201,18 @@
         font-size: 25px; 
     }   
     #troy-lodge {
-        margin-left: 22%;
         width: 500px;
     }
     #about {
         font-size: 25px;
         width: 80%;
+        max-width: 625px;
     }
 }
     /* iPad sideways */
 @media only screen and (min-width: 1179px) {  
     #social-icons {
-        margin-left: 56.5%;
+
     }
 }
 
